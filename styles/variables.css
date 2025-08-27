@@ -1,0 +1,11 @@
+:root {
+  /*----colors-----*/
+  --main-bacground: #161616;
+  --text-color: #b3b2b2;
+  --heading-color: #fff;
+  --grey-color: #222222;
+
+  /*----width-----*/
+  --min-width: 350px;
+  --max-width: 1400px;
+}

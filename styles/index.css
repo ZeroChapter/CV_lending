@@ -1,0 +1,30 @@
+@import "./variables.css";
+@import "./fonts.css";
+
+@import "./hero.css";
+@import "./nav-menu.css";
+@import "./skills.css";
+@import "./about.css";
+@import "./projects.css";
+@import "./contacts.css";
+
+:root {
+  font-size: calc(14px + (20 - 14) * (100vw - 350px) / (1400 - 350));
+}
+body {
+  background-color: var(--main-bacground);
+  display: flex;
+  color: aliceblue;
+  margin: auto;
+  min-width: var(--min-width);
+  max-width: var(--max-width);
+  box-shadow: 1px 1px 13px 11px rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (max-width: 870px) {
+  body {
+    box-shadow: none;
+  }
+}

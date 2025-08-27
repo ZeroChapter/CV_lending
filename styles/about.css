@@ -1,0 +1,39 @@
+.about {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+
+  grid-template-rows: auto;
+
+  column-gap: 1rem;
+  border-radius: 50px;
+  animation: about-animation 1.5s ease-in-out forwards;
+}
+.about__h {
+  display: flex;
+  justify-self: center;
+  font-size: 2rem;
+}
+.about__text {
+  padding: 1.5rem;
+}
+
+@keyframes about-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 730px) {
+  .about {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .about__text {
+    padding-left: 2.5rem;
+    font-size: 1.5rem;
+  }
+}
