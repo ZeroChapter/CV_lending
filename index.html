@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
-    <article class="hero">
+    <article class="hero" id="hero">
         <img src="./images/avatar.jpg" alt="avatar" class="hero__avatar" loading="lazy">
         <h1 class="hero__title">Сергей <br> Нечаев</h1>
         <div class="hero__left">
@@ -34,7 +34,7 @@
             <li class="nav__item"><a href="#contacts">Контакты</a></li>
         </ul>
     </nav>
-    <article class="skills">
+    <article class="skills" id="skills">
         
         <div class="skills__title">
         <h2 class="skills__h">Навыки</h2>     
@@ -61,7 +61,7 @@
 
 
     </article>
-    <article class="about">
+    <article class="about" id="about">
         <h2 class="about__h">Обо мне</h2>
         <div>
             <p class="about__text">Привет! Меня зовут Сергей. Я целеустремленный Junior Frontend-разработчик с сильной фундаментальной подготовкой. За 1.5 года интенсивного самообучения я освоил и успешно применил в учебных проектах современный стек: HTML, CSS, JavaScript, TypeScript, React и Redux Toolkit.</p>
@@ -71,7 +71,7 @@
             <p class="about__text">Вне разработки увлекаюсь геймдевом на Unity, что помогает мне развивать логическое мышление и понимание пользовательского опыта. Также рисую в Photoshop и играю на музыкальных инструментах, что воспитывает насмотренность и чувство гармонии — важные качества для создания эстетичных интерфейсов.</p>
         </div>
     </article>
-    <article class="projects">
+    <article class="projects" id="projects">
         <h2 class="projects__title">Проекты</h2>
         <ul class="project-list">
             <li>
@@ -118,14 +118,14 @@
             <li>
                 <div class="project-card">
                     <h2 class="project-card__h2">Лендинг резюме</h2>
-                    <a class="project-card__top" href=""><img src="./images/sergio.jpg" alt=""></a>
+                    <a class="project-card__top" href="https://zerochapter.github.io/CV_lending/"><img src="./images/sergio.jpg" alt=""></a>
                    <div class="project-card__bottom">
                         <ul class="stack">
                             <li>HTML</li>
                             <li>CSS</li>
                         </ul>
                         <p>Страница которую вы сейчас <br> смотрите :)</p>
-                        <a href="https://github.com/ZeroChapter/Diamond" class="project__git" target="_blank"> <img src="./images/icons/github.svg" alt="Git">посмотреть проект</a>
+                        <a href="https://github.com/ZeroChapter/CV_lending" class="project__git" target="_blank"> <img src="./images/icons/github.svg" alt="Git">посмотреть проект</a>
                     </div>
                 </div>
             </li>
@@ -136,7 +136,7 @@
     <p class="contacts__text">Есть вопрос или предложение? Напишите мне, и я отвечу в ближайшее время.</p>
     
     <form id="contact-form" class="contact-form">
-        <!-- Поле для имени -->
+      
         <div class="form-group">
             <label for="sender-name" class="form-label">Ваше имя</label>
             <input 
@@ -149,7 +149,7 @@
             >
         </div>
         
-        <!-- Поле для сообщения -->
+        
         <div class="form-group">
             <label for="message" class="form-label">Ваше сообщение</label>
             <textarea 
@@ -162,14 +162,15 @@
             ></textarea>
         </div>
         
-        <!-- Кнопка отправки -->
+        
         <button type="submit" class="form-submit-btn">Отправить сообщение</button>
     </form>
     
-    <!-- Контейнер для статуса отправки -->
+    
     <div id="form-status" class="form-status"></div>
 </article>
     
 </body>
 <script src="./telegram-form.js"></script>
+<script src="./nav.js"></script>
 </html>
