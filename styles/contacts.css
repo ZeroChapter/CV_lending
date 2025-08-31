@@ -99,7 +99,10 @@
 .error {
   color: #f44336;
 }
-
+.contacts-colored {
+  color: #caa915;
+  font-weight: 500;
+}
 .loading {
   color: #2196f3;
 }

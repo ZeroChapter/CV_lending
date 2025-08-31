@@ -27,13 +27,22 @@
             </p>
     </article>
     <nav class="nav">
-        <ul class="nav__menu">
-            <li class="nav__item"><a href="#skills">Навыки</a></li>
-            <li class="nav__item"><a href="#about">Обо мне</a></li>
-            <li class="nav__item"><a href="#projects">Проекты</a></li>
-            <li class="nav__item"><a href="#contacts">Контакты</a></li>
-        </ul>
-    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <div class="nav__overlay" id="navOverlay"></div>
+    
+    <ul class="nav__menu" id="navMenu">
+        <li class="nav__item"><a href="#hero">Главная</a></li>
+        <li class="nav__item"><a href="#skills">Навыки</a></li>
+        <li class="nav__item"><a href="#about">Обо мне</a></li>
+        <li class="nav__item"><a href="#projects">Проекты</a></li>
+        <li class="nav__item"><a href="#contacts">Контакты</a></li>
+    </ul>
+</nav>
     <article class="skills" id="skills">
         
         <div class="skills__title">
@@ -134,6 +143,7 @@
     <article id="contacts" class="contacts">
     <h2 class="contacts__title">Контакты</h2>
     <p class="contacts__text">Есть вопрос или предложение? Напишите мне, и я отвечу в ближайшее время.</p>
+    <p class="contacts__text">Пожалуйста, укажите предпочтительный способ связи и ваши контакты в сообщении</p>
     
     <form id="contact-form" class="contact-form">
       
@@ -169,7 +179,18 @@
     
     <div id="form-status" class="form-status"></div>
 </article>
-    
+<article class="contacts">
+<p><span class="contacts-colored">Почта:</span> 79267646963vk@gmail.com</p>
+<p><span class="contacts-colored">Телефон:</span> +79773701743</p>
+    <div class="lincks">
+        <button class="link-button" onclick="window.open('https://github.com/ZeroChapter', '_blank')" title="мой GitHub" data-tooltip="GitHub">
+            <img src="./images/icons/github.svg" alt="GitHub">
+        </button>
+        <button class="link-button" onclick="window.open('http://t.me/LuSenec', '_blank')" title="мой телеграм" data-tooltip="Telegram">
+            <img src="./images/icons/teelgram.svg" alt="tg">
+        </button>
+    </div>
+</article>
 </body>
 <script src="./telegram-form.js"></script>
 <script src="./nav.js"></script>
