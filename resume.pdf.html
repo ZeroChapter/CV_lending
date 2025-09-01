@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Сергей Нечаев</title>
+    <style>
+       
+        @media print {
+            body {
+                font-family: 'Arial', sans-serif;
+                line-height: 1.4;
+                color: #000;
+                background: #fff;
+                font-size: 12pt;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .container {
+                max-width: 210mm;
+                margin: 0 auto;
+                padding: 15mm;
+            }
+            
+            .section {
+                margin-bottom: 15px;
+                page-break-inside: avoid;
+            }
+            
+            h1 {
+                font-size: 18pt;
+                margin-bottom: 5px;
+                color: #000;
+            }
+            
+            h2 {
+                font-size: 14pt;
+                margin: 15px 0 8px 0;
+                padding-bottom: 3px;
+                border-bottom: 1px solid #ccc;
+                color: #333;
+            }
+            
+            .contact-info {
+                font-size: 10pt;
+                margin-bottom: 15px;
+                color: #666;
+            }
+            
+            .skills-list, .projects-list {
+                padding-left: 15px;
+            }
+            
+            .skills-list li, .projects-list li {
+                margin-bottom: 4px;
+            }
+            
+            .project-item {
+                margin-bottom: 10px;
+            }
+            
+            .project-title {
+                font-weight: bold;
+            }
+            
+            .project-tech {
+                font-style: italic;
+                color: #666;
+                font-size: 10pt;
+            }
+            
+          
+            .no-print {
+                display: none;
+            }
+            
+          
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        
+        
+        @media screen {
+            body {
+                font-family: 'Arial', sans-serif;
+                line-height: 1.4;
+                color: #000;
+                background: #f5f5f5;
+                font-size: 12pt;
+                margin: 0;
+                padding: 20px;
+            }
+            
+            .container {
+                max-width: 210mm;
+                margin: 0 auto;
+                background: #fff;
+                padding: 15mm;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h1>Сергей Нечаев</h1>
+            <div class="contact-info">
+                Junior Frontend Developer<br>
+                📧 79267646963vk@gmail.com<br>
+                📞 +7 (977) 370-17-43<br>
+                💻 GitHub: github.com/ZeroChapter<br>
+                ✈️ Telegram: t.me/LuSenec
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Ключевые навыки</h2>
+            <ul class="skills-list">
+                <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+)</li>
+                <li><strong>Фреймворки:</strong> React, TypeScript, Redux Toolkit</li>
+                <li><strong>Инструменты:</strong> Vite, WebPack, Git</li>
+                <li><strong>Мобильная разработка:</strong> React Native</li>
+                <li><strong>Адаптивная верстка:</strong> Кроссбраузерность, mobile-first</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Опыт разработки</h2>
+            <p>1.5 года интенсивного самообучения и практики frontend-разработки. Создание SPA-приложений на React с использованием современных подходов (функциональные компоненты, хуки, Context API).</p>
+        </div>
+
+        <div class="section">
+            <h2>Проекты</h2>
+            <ul class="projects-list">
+                <li class="project-item">
+                    <div class="project-title">ToDo лист</div>
+                    <div class="project-tech">React, TypeScript</div>
+                    <div>Приложение для управления задачами с цветовыми категориями</div>
+                </li>
+                
+                <li class="project-item">
+                    <div class="project-title">INCHAPIN лендинг</div>
+                    <div class="project-tech">HTML, CSS</div>
+                    <div>Адаптивный лендинг по макету Figma</div>
+                </li>
+                
+                <li class="project-item">
+                    <div class="project-title">Приложение для целей и привычек</div>
+                    <div class="project-tech">React Native</div>
+                    <div>Мобильное приложение (в разработке)</div>
+                </li>
+                
+                <li class="project-item">
+                    <div class="project-title">Лендинг-резюме</div>
+                    <div class="project-tech">HTML, CSS, JavaScript</div>
+                    <div>Персональная страница-портфолио</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>О себе</h2>
+            <p>Целеустремленный Junior Frontend-разработчик. Готов быстро обучаться и приносить пользу команде. Ищу возможность расти под руководством опытных разработчиков.</p>
+            <p>Вне разработки: увлекаюсь геймдевом на Unity, рисованием в Photoshop, игрой на музыкальных инструментах.</p>
+        </div>
+
+        <div class="section no-print">
+            <button onclick="window.print()" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                🖨️ Сохранить в PDF
+            </button>
+        </div>
+    </div>
+
+    <script>
+        
+        window.onload = function() {
+            // window.print();
+        }
+    </script>
+</body>
+</html>

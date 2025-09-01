@@ -64,7 +64,6 @@
   transition: all 0.3s ease;
 }
 
-/* Состояния бургер-меню */
 .nav__toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -77,7 +76,6 @@
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Адаптивные стили для меню */
 @media (max-width: 730px) {
   .nav {
     position: relative;
@@ -149,10 +147,9 @@
   position: sticky;
   top: 0;
   background-color: var(--main-bacground);
-  z-index: 1000; /* Увеличиваем z-index */
+  z-index: 1000;
 }
 
-/* Убираем ховер-эффекты на мобильных */
 @media (max-width: 730px) {
   .nav__item:hover {
     transform: none !important;
