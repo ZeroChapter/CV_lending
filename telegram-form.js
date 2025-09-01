@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const statusElement = document.getElementById('form-status');
     
     
-    const API_URL = 'https://your-app-name.vercel.app/api/send-message';
+    const API_URL = 'https://cv-lending.vercel.app/api/send-message';
 
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
