@@ -3,64 +3,59 @@ document.addEventListener('DOMContentLoaded', function() {
     const statusElement = document.getElementById('form-status');
     
     
-    const BOT_TOKEN = '8265611506:AAH917JSYM_bQCk8Jyqj2-0fJZ3hH5Tfu6k'; 
-    const CHAT_ID = '553463033';     
-    
+    const API_URL = 'https://your-app-name.vercel.app/api/send-message';
+
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
         
         const formData = new FormData(form);
         const senderName = formData.get('sender_name');
         const message = formData.get('message');
         
-       
-        const telegramMessage = `📨 Новое сообщение из портфолио:\n\n` +
-                               `👤 От: ${senderName}\n` +
-                               `📝 Сообщение: ${message}`;
-        
-    
         showStatus('Отправка...', 'loading');
         
         try {
-           
-            const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    chat_id: CHAT_ID,
-                    text: telegramMessage,
-                    parse_mode: 'HTML'
+                    senderName: senderName,
+                    message: message
                 })
             });
             
             const data = await response.json();
             
-            if (data.ok) {
+            if (response.ok) {
                 showStatus('✅ Сообщение отправлено! Скоро отвечу.', 'success');
-                form.reset(); 
+                form.reset();
+                
+               
+                setTimeout(() => {
+                    statusElement.textContent = '';
+                    statusElement.className = 'form-status';
+                }, 5000);
+                
             } else {
-                throw new Error(data.description || 'Ошибка отправки');
+                throw new Error(data.error || 'Ошибка отправки');
             }
             
         } catch (error) {
             console.error('Ошибка:', error);
-            showStatus('❌ Ошибка отправки. Попробуйте еще раз или напишите напрямую в Telegram.', 'error');
+            showStatus('❌ Ошибка отправки. Напишите напрямую на почту.', 'error');
+            
+        
+            setTimeout(() => {
+                const mailtoLink = `mailto:79267646963vk@gmail.com?subject=Сообщение с сайта&body=Имя: ${encodeURIComponent(senderName)}%0AСообщение: ${encodeURIComponent(message)}`;
+                window.location.href = mailtoLink;
+            }, 2000);
         }
     });
     
     function showStatus(message, type = '') {
         statusElement.textContent = message;
         statusElement.className = `form-status ${type}`;
-        
-     
-        if (type === 'success' || type === 'error') {
-            setTimeout(() => {
-                statusElement.textContent = '';
-                statusElement.className = 'form-status';
-            }, 5000);
-        }
     }
 });

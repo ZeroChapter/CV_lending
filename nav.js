@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.nav');
     const headerHeight = header.offsetHeight;
 
-    // Функция для переключения мобильного меню
+
     function toggleMobileMenu() {
         navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     }
 
-    // Закрытие мобильного меню
+   
     function closeMobileMenu() {
         navToggle.classList.remove('active');
         navMenu.classList.remove('active');
@@ -23,13 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
     }
 
-    // Обработчик для бургер-кнопки
+ 
     navToggle.addEventListener('click', toggleMobileMenu);
 
-    // Закрытие меню по клику на overlay
+   
     navOverlay.addEventListener('click', closeMobileMenu);
 
-    // Закрытие меню при клике на пункт (только на мобильных)
+    
     navItems.forEach(item => {
         item.addEventListener('click', function(e) {
             if (window.innerWidth <= 730) {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (targetSection) {
                     closeMobileMenu();
                     
-                    // Небольшая задержка для анимации закрытия меню
+                    
                     setTimeout(() => {
                         const targetPosition = targetSection.offsetTop - headerHeight;
                         window.scrollTo({
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, 300);
                 }
             } else {
-                // Стандартное поведение для десктопа
+       
                 e.preventDefault();
                 const targetId = this.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Установка активного пункта меню
+  
     function setActiveNavItem(id) {
         navItems.forEach(item => {
             item.parentElement.classList.remove('active');
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Обновление активного пункта при скролле
+   
     function updateActiveNavItem() {
         let currentSection = '';
         const scrollPosition = window.scrollY + headerHeight + 100;
@@ -97,13 +97,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Обработчик скролла
-   // window.addEventListener('scroll', updateActiveNavItem);
-    
-    // Инициализация при загрузке
+ 
     updateActiveNavItem();
 
-    // Обработчик хэша в URL
+ 
     if (window.location.hash) {
         const targetId = window.location.hash.substring(1);
         const targetSection = document.getElementById(targetId);
@@ -120,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Закрытие меню при изменении размера окна
+   
     window.addEventListener('resize', function() {
         if (window.innerWidth > 730) {
             closeMobileMenu();
