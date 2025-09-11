@@ -5,6 +5,7 @@
   row-gap: 2rem;
   column-gap: 1rem;
   height: 100vh;
+  margin-bottom: 2rem;
 }
 .hero__avatar {
   border-radius: 100%;
@@ -36,6 +37,13 @@
   font-size: 1rem;
   animation: image-anim 1s ease-in-out forwards;
   padding-inline: 5px;
+}
+.hero__left {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .link-button {
@@ -76,10 +84,83 @@
   gap: 10px;
 }
 .download-link {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-  color: var(--text-color);
+  transition: all 0.2s ease-in-out;
+  animation: opadity-anim 5s ease-in-out forwards;
+  color: var(--main-bacground);
+  padding: 10px 15px;
+  border-radius: 99999px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  text-decoration: none;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  background: none;
+  border: none;
+  display: inline-block;
+
+  &::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background-size: 400%;
+    z-index: -2;
+    filter: blur(5px);
+    animation: glowing 20s linear infinite;
+    border-radius: 9999px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--heading-color);
+    border-radius: 99999px;
+    z-index: -1;
+    box-shadow: 1px 1px 13px 11px rgba(0, 0, 0, 0.5);
+  }
+  &:hover {
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+    &::before {
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      filter: blur(6px);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 @media (max-width: 870px) {

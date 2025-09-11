@@ -33,7 +33,7 @@ body {
   max-width: var(--max-width);
   box-shadow: 1px 1px 13px 11px rgba(0, 0, 0, 0.5);
   flex-direction: column;
-  gap: 2rem;
+  gap: 0rem;
 }
 
 @media (max-width: 870px) {

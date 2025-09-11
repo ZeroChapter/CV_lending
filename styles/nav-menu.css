@@ -4,6 +4,7 @@
   top: 0;
   background-color: var(--main-bacground);
   z-index: 100;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4);
 }
 .nav__menu {
   display: flex;
@@ -13,28 +14,51 @@
   padding-inline-start: 0;
 }
 .nav__item {
-  padding: 0.5rem clamp(0.5rem, 20vw, 1.2rem);
-  border: solid 1px var(--text-color);
-  background-color: var(--heading-color);
-  border-radius: 99999px;
-  animation: nav-animation 0.5s ease-in-out;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  padding: 0 1rem;
 
   & a {
-    color: var(--main-bacground);
+    color: var(--text-color);
     text-decoration: none;
-    font-size: clamp(1rem, 20vw, 1.8rem);
+    font-size: clamp(0.8rem, 20vw, 1.3rem);
+    transition: color 0.3s ease-in-out;
   }
+
   &:hover {
-    transition: 0.5s;
-    transform: translateY(-10px);
-    background-color: var(--main-bacground);
+    background-color: var(--main-background);
+
     & a {
       color: var(--text-color);
     }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: aliceblue;
+      animation: underline-appear 0.2s ease-in-out forwards;
+    }
   }
+
   &:active {
-    opacity: 0.5;
-    transform: scale(1.2);
+    opacity: 0.7;
+    transform: scale(1.05);
+    transition: all 0.1s ease-in-out;
+  }
+}
+
+@keyframes underline-appear {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
   }
 }
 
