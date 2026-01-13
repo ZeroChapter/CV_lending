@@ -9,3 +9,7 @@
   --min-width: 350px;
   --max-width: 1400px;
 }
+strong {
+  font-weight: bold;
+  color: rgb(29, 147, 243);
+}

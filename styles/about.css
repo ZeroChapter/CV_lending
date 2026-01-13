@@ -8,14 +8,22 @@
   column-gap: 1rem;
   border-radius: 50px;
   animation: about-animation 1.5s ease-in-out forwards;
+  padding-bottom: 200px;
 }
 .about__h {
   display: flex;
   justify-self: center;
   font-size: 2rem;
 }
+.about__h3 {
+  display: flex;
+  justify-self: start;
+  font-size: 1.5rem;
+  padding-left: 1.5rem;
+}
 .about__text {
-  padding: 1.5rem;
+    padding: 1.5rem;
+  padding-top: 0;
 }
 
 @keyframes about-animation {
